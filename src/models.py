@@ -22,20 +22,6 @@ class Alarm(db.Model):
         db.session.add(self)
         db.session.commit()
 
-    @classmethod
-    def get_alarms(cls):
-        alarms = cls.query.all()
-        return alarms
-
-    @classmethod
-    def get_alarm_by_id(cls, id):
-        alarm = cls.query.filter_by(id=id).one_or_none()
-        return alarm
-
-    @classmethod
-    def delete_alarm(cls, id):
-        cls.query.filter_by(id=id).delete()
-        db.session.commit()
 
 
 class User(db.Model):
